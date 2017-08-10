@@ -1,8 +1,20 @@
 if ( .Platform$OS.type == 'windows' ) memory.limit( 256000 )
 my_username <- Sys.getenv( "my_username" )
 my_password <- Sys.getenv( "my_password" )
-	your_username = my_username , 
-	your_password = my_password )
+library(lodown)
+# examine all available SHARE microdata files
+share_cat <-
+	get_catalog( "share" ,
+		output_dir = file.path( getwd() ) , 
+		your_username = my_username , 
+		your_password = my_password )
+
+# wave 1, wave 6, and longitudinal weights only
+share_cat <- subset( share_cat , grepl( "ave 1|ave 6|ongitudinal" , stata_names ) )
+# download the microdata to your local computer
+stopifnot( nrow( share_cat ) > 0 )
+
+
 
 options( survey.lonely.psu = "adjust" )
 
