@@ -3,5 +3,3 @@ my_username <- Sys.getenv( "my_username" )
 my_password <- Sys.getenv( "my_password" )
 library(lodown)
 lodown( "share" , output_dir = file.path( getwd() ) , 
-	your_username = my_username , 
-	your_password = my_password )
