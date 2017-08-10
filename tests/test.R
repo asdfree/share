@@ -84,6 +84,8 @@ share_design <-
 	update( 
 		share_design , 
 		
+		one = 1 ,
+		
 		sexe = factor( dn042_ , levels = 1:2 , labels = c( 'masculin' , 'feminin' ) ) ,
 		
 		health_in_general_2015 =
