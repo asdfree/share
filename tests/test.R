@@ -10,7 +10,7 @@ share_cat <-
 		your_password = my_password )
 
 # wave 1, wave 6, and longitudinal weights only
-share_cat <- subset( share_cat , grepl( "ave 1|ave 6|ongitudinal" , stata_names ) )
+share_cat <- subset( share_cat , grepl( "ave 1|ave 6|ongitudinal" , output_folder ) )
 # download the microdata to your local computer
 stopifnot( nrow( share_cat ) > 0 )
 
