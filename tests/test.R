@@ -29,14 +29,14 @@ available_files <-
 
 # wave six demographics file
 share_dn6_df <-
-	readRDS( grep( "sharew6(.*)dn\.rds" , available_files , value = TRUE ) )
+	readRDS( grep( "sharew6(.*)dn\\.rds" , available_files , value = TRUE ) )
 
 share_dn6_df <-
 	share_dn6_df[ c( "mergeid" , "country" , "dn042_" , "dn004_" ) ]
 	
 # wave six physical health file
 share_ph1_df <-
-	readRDS( grep( "sharew1(.*)ph\.rds" , available_files , value = TRUE ) )
+	readRDS( grep( "sharew1(.*)ph\\.rds" , available_files , value = TRUE ) )
 
 share_ph1_df$weight_in_2004 <-
 		ifelse( share_ph1_df$ph012_ < 0 , NA , share_ph1_df$ph012_ )
@@ -46,7 +46,7 @@ share_ph1_df <-
 	
 # wave six physical health file
 share_ph6_df <-
-	readRDS( grep( "sharew6(.*)ph\.rds" , available_files , value = TRUE ) )
+	readRDS( grep( "sharew6(.*)ph\\.rds" , available_files , value = TRUE ) )
 
 share_ph6_df$weight_in_2015 <-
 		ifelse( share_ph6_df$ph012_ < 0 , NA , share_ph6_df$ph012_ )
@@ -57,7 +57,7 @@ share_ph6_df <-
 
 # longitudinal weights file
 share_longwt_df <-
-	readRDS( grep( "longitudinal_weights_w1\-(.*)\.rds" , available_files , value = TRUE ) )
+	readRDS( grep( "longitudinal_weights_w1\\-(.*)\\.rds" , available_files , value = TRUE ) )
 
 # france only longitudinal weights
 france_df <- subset( share_longwt_df , country == 17 & ( cliw_a > 0 ) )
