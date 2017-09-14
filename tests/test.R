@@ -29,7 +29,7 @@ available_files <-
 
 # wave six demographics file
 share_dn6_df <-
-	readRDS( grep( "sharew6(.*)dn\\.rds" , available_files , value = TRUE ) )
+	readRDS( grep( "6\\.0\\.0(.*)sharew6(.*)dn\\.rds" , available_files , value = TRUE ) )
 
 share_dn6_df <-
 	share_dn6_df[ c( "mergeid" , "country" , "dn042_" , "dn004_" ) ]
@@ -46,7 +46,7 @@ share_ph1_df <-
 	
 # wave six physical health file
 share_ph6_df <-
-	readRDS( grep( "sharew6(.*)ph\\.rds" , available_files , value = TRUE ) )
+	readRDS( grep( "6\\.0\\.0(.*)sharew6(.*)ph\\.rds" , available_files , value = TRUE ) )
 
 share_ph6_df$weight_in_2015 <-
 		ifelse( share_ph6_df$ph012_ < 0 , NA , share_ph6_df$ph012_ )
