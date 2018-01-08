@@ -16,9 +16,9 @@ share_cat <-
 # wave 1, wave 6, and longitudinal weights only
 share_cat <- subset( share_cat , grepl( "ave 1|ave 6|ongitudinal" , output_folder ) )
 # download the microdata to your local computer
-lodown( "share" , share_cat , 
-	your_username = my_username , 
-	your_password = my_password )
+
+
+
 
 options( survey.lonely.psu = "adjust" )
 
